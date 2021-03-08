@@ -1,0 +1,274 @@
+<!-- Lekce Ne zaèneme -->
+
+<!-- úvod + teorie -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!-- Natavení -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, viewport-fit=cover">
+    <meta name="author" content="Vit Mitas">
+    <meta name="keywords" content="Programujeme v c++, c++, Mitáš Vít">
+    <meta name="description" content="Programujeme v c++ - od základù a po pokroèilé">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Programujeme v c++">
+    <meta version="1.0.0">
+
+    <!-- Menu bar -->
+    <title>Programujeme v c++ - úvodní strana</title>
+    <link rel="shortcut icon" href="cpp_logo.png">
+
+    <!-- Styly -->
+    <link rel="stylesheet" type="text/css" href="styl.css">
+
+</head>
+
+
+
+
+<body>
+    <h1> 1. Ne zaèneme </h1>
+    <span> Ne si zaèneme povídat o programovacím jazyce C++, musíme se alespoò povrchnì seznámit s nìkterımy pojmy, které budeme</span>
+    <span> vyuívat. Zaèneme od poèítaèe jako takového, pak si nìco povíme o programovacích jazycích, algoritmech a objektovì</span>
+    <span> orientovaném programování a skonèíme u C++ a nástrojù, které budeme potøebovat. Nìkteré z uvedenıch pojmù nepochybnì </span>
+    <span> znáte, ale je dobré si ji znovu pøeèíst, aby jste terminologii dobøe rozumnìli.</span>
+
+    <!-- 1.1 -->
+
+    <h2 id="_pocitac"> 1.1 Poèítaè </h2>
+    <span> S osobními poèítaèi se v souèasné dobì setkáváme dennì - najdeme je nejen v kadé kanceláøi, ale i témìø v kadé domácnosti.</span>
+    <span> Pøedpokládám, e s poèítaèem umíte jako uivatelé - umíte ho zapnout, vytvoøit na nìm textovı dokument apod. Ovšem </span>
+    <span> programátor (a to i zaèínající) o nìm musí pøece jen vìdìt víc ne bìnı uivatel. I kdy bue povídání o této lekci</span>
+    <span> silnì zjednodušené, pro naše úèely bude staèit.</span>
+    <p> Obvykle se øíká, e poèítaè obsahuje ètyøi základní èásti: </p>
+    <ol>
+        <li>
+            <b> Procesor </b><span> je souèást, která opravdu "poèítá", lépe øeèeno která zpracovává informace. Zároveò také øídí</span>
+            <span> èinnost všech ostatních èástí poèítaèe.</span>
+        </li>
+        <li>
+            <b> Operaèní pamì </b><span> slouí k ukládání dat (informací), která zpracovává, a programù, tedy pøíkazù, které</span>
+            <span> urèují co má dìlat. Vše, co je v této pamìti, se pøi vypnutí poèítaèe ztratí, "zapomene". Pouívá se pro ni oznaèení</span>
+            <span> RAM, co je zkratka anglickıch slov <i> Random Access Memory</i>, tedy <b>pamì s náhodnım pøístupem.</b></span>
+        </li>
+        <li>
+            <b>Vstupní a vıstupní zaøízení </b><span> slouí k vımìnì informací s okolím. (Poèítaè by nám nebyl nic platnı, kdyby</span>
+            <span> nám nemohl pøedat vısledky své práce.) Typickımi pøíklady vstupních zaøízení jsou klávesnice, myš, skener atd.</span>
+            <span> Typickımi pøíklady vıstupních zaøízení, mùe bıt obrazovka monitoru nebo tiskárna. Pro vstupní a vıstupní zaøízení se</span>
+            <span> pouívá zkratka V/V nebo I/O (z anglického input/output).</span>
+        </li>
+        <li>
+            <b>Trvalá pamì </b><span> slouí k trvalému ukládání dat a programù.<sup>1</sup> Data v ní se pøi vypnutí poèítaèe</span>
+            <span> neztrácejí, má zpravidla mnohonásobnì vìtší kapacitu ne operaèní pamì, ale práce s ní je mnohonásobnì pomalejší</span>
+            <span> ne práce s operaèní pamìtí. Jako trvalá pamì se pouívají pøevánì magnetické disky (pevnı disk, disk SSD - jeho název </span>
+            <span> pochazí z anglickıch slov <i> solid state drive </i> a je to pamìové zaøízení podobné jako flash disk neboli "fleška", ovšem</span>
+            <span> s vìtší kapacitou) a samozøejmì také disky CD nebo DVD.</span>
+        </li>
+    </ol>
+    <span>___________</span>
+    <br />
+    <span> 1 Setkáváme se také s oznaèením vnìjší pamì, nebo v dobách poèítaèové prehistorie byly magnetické disky opravdu uloeny</span>
+    <span> mimo vlastní poèítaè. I dnes lze ovšem pøipojit k poèítaèi vnìjší(externí) pamìové médium.</span>
+
+    <!-- 1.1.1 -->
+
+    <h3 id="_pamet">1.1.1 Operaèní pamì</h3>
+    <span> Základem operaèní pamìti jsou elektronické obvody, ketré mohou mít dva stavy - napøíklad vypnuto nebo zapnuto. </span>
+    <span> Jeden z tìchto stavù obvykle odpovídá èíslici 0, druhı èíslici 1. Údaje v pamìti jsou proto vyjádøeny jen pomocí</span>
+    <span> nul a jednièek, tvz. dvojkové soustavì. Místo, na které mùeme uloit èíslici 0 nebo 1, oznaèujeme <b>bit</b>. Operaèní pamì je </span>
+    <span> tedy dlouhá øada bitù.</span>
+    <br />
+    <span> Ovšem práce s jednotlivımi bity je nepohodlná, a proto se bity sdruují do vìtších celkù. V dnešních poèítaèích se témìø </span>
+    <span> bez vyjímky pouívají skupiny velikosti 8 bitù, které se nazıvají <b> bajty </b>(anglicky byte, tedy slabika). Poznamenejme, e </span>
+    <span> pro bity se pouívá znaèka b a pro bajty znaèka B.</span>
+    <br />
+    <span> Jednotlivé bajty, tvoøící operaèní, jsou oèíslovány. Poèáteèní bajt má èíslo 0, následující má èíslo 1 adt. Toto poøadové èíslo se nazıvá </span>
+    <span> <b> adresa </b> bajtu. (Ve skuteènosti mùe bıt záleitost s adresami trochu sloitìjší, ale to nás v souvislosti s C++ vùbec nebude zajímat.)</span>
+
+    <!-- 1.1.2 -->
+
+    <h3 id="_soustava">1.1.2 Soustava SI, bity a bajty</h3>
+    <span> Vnitøní pamì bìného poèítaèe má dnes velikost nìkolik miliard bajtù, kapacita diskù a podobnıch zaøízení se vyjadøuje v bilionech bajtù. </span>
+    <span> Podobnì jako v bìném ivotì nevyjadøujeme napøíklad vzdálenosti mìst v metrech, ale v kilometrech, i v informatice se pouívají k vyjádøení </span>
+    <span> kapacity pamìti(nebo obecnì mnoství informace) vìtší jednotky. Bìnì se hovoøí o kilobajtech (kB), megabajtech (MB), gigabajtech (GB) atd.</span>
+    <br />
+    <span> Vzhledem k tomu, e poèítaèe jsou zaloeny na dvojkové soustavì, je však pøirozenìjší pouívat jednotky zaloené na mocninách dvou, nikoli</span>
+    <span> na mocninách deseti, jak je tomu v soustavì SI. Proto by se mìly pouívat jednotky kikibajt (1 KiB = 2<sup>10</sup> B= 1024 B), mebibajt (1 MiB= 1024</span>
+    <span> KiB = 2<sup>20</sup>B= 1048576 B), gibibajt (1 GiB= 2<sup>30</sup>B= 1073741824 B) atd. Pøedpony tìchto jednotek jsou sloeny z první slabiky z první </span>
+    <span> slabiky odpovídající pøedpony soustavy SI a slabiky <b> bi </b> ze slova <i>binary.</i><sup>2</sup></span>
+    <br />
+    <span>___________</span>
+    <br />
+    <span> 2 Tyto jednotky byly zavedeny Mezinárodní elektronickou komisí r. 1998, pøijaty hlavními standardizaèními organizacemi (jsou napøíklad souèástí standardu IEC 80000-13:2008. </span>
+    <span> Quantities and units - <i> Part 13: Information science and technology. eneva: 2008</i></span>
+    <br />
+
+    <!-- 1.2 -->
+
+    <h2 id="_typy">1.2 Datové typy a promìnné</h2>
+    <span> Snadno zjistíme, e nejmenší èíslo, které mùe jeden bajt obsahovat, se skládá z osmi nul a pøedstavuje i v desítkové soustavì nulu.</span>
+    <span> Nejvìtší takové èíslo se bude skládat z osmi jednièek a v desítkové soustavì pøedstavuje 255. To je samozøejmì málo - s poèítaèem, kterı by znal</span>
+    <span> jen èíslo od 0 do 255, bychom si nedokázal ani pøepoèítat vıplatu. Proto se pro ukládání dat pouívají rùzné velké skupiny za soubou následujících bajtù</span>
+    <br />
+    <span> Ani to ovšem nestaèí. Snadno se pøesvìdèíme, e kdybychom vzali napøíklad skupinu dvou za sebou následujících bajtù, mohli bychom do ní uloit celá èísla v rozmezí </span>
+    <span> od 0 do 65 535. Ale co kdy budeme potøebovat záporná èísla? Co kdy budeme potøebovat reálná èísla? Co kdy budeme chtít vyjádøit znaky nebo logickou hodnotou</span>
+    <span> (nìjaké tvrzení platí nebo neplatí)? Musíme tedy zajistit zpùsob, kterı nám umoní reprezentovat data rùznıch "druhù" v pamìti poèítaèe. Jinımi slovy, musíme najít </span>
+    <span> zpùsob, jakım urèité skupinì bitù pøiøadíme hodnotu, kterou tato skupina pøedstavuje - jak ji v poèítaèi <b> zakodóvat. </b></span>
+    <br />
+    <span> Mùeme se napøíklad dohodnout, e bajt s hodnotou 01000001 bude pøedstavovat znak 'A'. Tá skupina bitù mùe za jinıch okolností ovšem také pøedstavovat </span>
+    <span> celé èíslo, které má hodnotu 65. Stejnı bajt ale mùe bıt souèástí vìtšího celku s úplnì jinım vıznamem.</span>
+    <br />
+    <span> Pøedchozí pøíklady ukazují, e pracuje-li poèítaè s nìjakım kouskem pamìti, s nìjakou skupinou za sebou následujících bajtù na urèité adrese, musí vìdìt,</span>
+    <span> jak je tato skupina velká a jak má její obsah interpretovat. Jinımi slovy, musí znát <b> datovı typ </b> hodnoty, která je tam uloena, musí vìdìt, </span>
+    <span> zda jde o celé èíslo, znak, logickou hodnotu atd.</span>
+    <br />
+    <span> Podle datového typu se také budou lišit operace, které lze s danou hodnotou provádìt. Celá èísla lze napøíklad sèítat a odeèítat, znaky lze spojovat do øetìzcù, </span>
+    <span> tedy do souvislého textu. Nyní se na celı problém podívejme trochu jinak. U víme, e kdy budeme chtít pracovat s nìjakou hodnotou, musíme si ji uloit do pamìti.</span>
+    <span> To ale znamená, e si tam pro ni musíme vyhradit místo a øíci, jakého typu budou údaje, které bude obsahovat. Takové místo pro ukládání hodnoty budeme nazıvat <b> promìnná. </b></span>
+    <br />
+    <span> Abychom s promìnnou mohli zacházet, musíme ji pojmenovat, musíme ji pøidìlit <b> identifikátor. </b>Tomu se v programování øíká <b> deklarace </b> promìnné.<sup>3</sup></span>
+    <br />
+    <span>___________</span>
+    <br />
+    <span> 3 Pozdìji uvidíme, e identifikátor - tedy jméno - mohou mít i jiné èásti programu, nejen promìnné.</span>
+    <br />
+
+    <!-- 1.3 -->
+
+    <h2 id="_programy"> 1.3 Programy a programovacé jazyky</h2>
+    <span> Aby mohl poèítaè nìjak zpracovávat data, která mu pøedloíme, musíme mu také øíci, co má vlastnì dìlat - musíme mu dát <b> program. </b></span>
+    <br />
+    <span> Procesor umí s daty øadu operací, ovšem velice jednoduchıch. Lze mu napøíklad øíci "vezmi celé èíslo, které je na adrese 6548, a pøièti k nìmu celé èíslo </span>
+    <span> z adresy 7895". Protoe do jeho pamìti nelze uloit nic jiného ne èísla, musí bıt tyto pøíkazy vyjádøeny - zakodóvany - také èísly. Toto èíselné vyjádøení </span>
+    <span> instrukcí(pøíkazù) pro procesor se nazıvá <b> strojovı kód </b> a je to jediná vìc, které procesor rozumí. Jedním z problémù je, e rùzné druhy poèítaèù pouívají </span>
+    <span> rùzné strojové kódy, take programy ve strojovém kódu nejsou pøenositelné mezi poèítaèi s rùznımi procesory.</span>
+    <br />
+    <span> Jinım - a moná horším - problémem je, e programování ve strojovém kódu je velice namáhavé a nepøehledné. Také to témìø nikdo nedìlá, místo toho se pouívají programovací jazyky, </span>
+    <span> které se dìlí podle abstrakce na tvz. <b> niší programovací jazyky </b>, pøíkladem je tøeba jazyk symbolickıch adres (assembler, k nìmu se dostaneme pozdìji) a na tvz. </span>
+    <span> <b> vyšší programovací jazyky </b>, které jsou napøíklad C, PHP, Java, Basic, Cobol a také C++.</span>
+    <br />
+    <span> Zápis programu ve vyšším programovacím jazyce se zpravidla skládá z vybranıch anglickıch slov a z vırazù zapsanıch podobnì jako v matematice. Programování ve vyšším jazyce je daleko </span>
+    <span> jednodušší ne programování ve strojovém kódu. Je tu ovšem jeden háèek: takovıto program nelze pøímo spustit, nebo poèítaè mu nerozumí. Program ve vyšším programovacím jazyce se proto buï </span>
+    <span><b> pøeloit </b> do strojového kódu, nebo <b> interpretovat. </b> V obou pøípadech k tomu potøebujeme další program (nebo skupinu programù), které to za nás udìlají.</span>
+    <br />
+    <span> Zápis programu ve vyšším programovacím jazyce se zpravidla oznaèuje jako <b> zdrojovı kód </b> nebo <b> zdrojovı program, </b> v "programátorštinì" <b> zdroják. </b> Textovı soubor, </span>
+    <span> kterı tento zápis obsahuje, oznaèujeme jako <b> zdorjovı soubor. </b> O jeho <b> pøklad </b> do strojového kódu (<b> kompilaci </b>) se stará program zvanı <b> pøekladaè </b> neboli </span>
+    <span><b> kompilátor </b> (anglicky nazıvanı <i> compiler </i>). V mnoha pøípadech s ním spoluparcuje ještì <b> sestavovací program </b> neboli <i> linker </i>, kterı mùe spojit nìkolik nezávisle </span>
+    <span> pøeloenıch èástí programu do jednoho celku. Sestavovací program také pøipojí knihovny - èásti programu, které u nìkdo naprogramoval pøedem a které mùeme u jen pouívat.</span>
+    <br />
+    <span> Pøekladem a sestavenım programem vznikne soubor obsahující strojovı kód, kterı lze na cílovém poèítaèi rovnou spustit. Mezi èasto pouívané pøekládané programovací jazyky patøí napøíklad </span>
+    <span> C nebo C++.</span>
+    <br />
+    <span> Mùeme však pouít speciální program, jen bude èíst zdrojovı text a provádìt pøíkazy, které v nìm najde - interpretovat. Typickı, interpretovanım jazykem je klasickı Basic.<sup>4</sup></span>
+    <span> Interpretované programy zoravidla bìí vıraznì pomaleji ne pøekládané programy. Navíc musíme na cílovı poèítaè spolu s našim programem dodat také interpretaèní program.</span>
+    <br />
+    <span> Doplme, e pøekladaè libovolného programovacího jazyka(i C++) zároven kontroluje syntatickou správnost programu- tedy zda program je napsán podle jistıch formálních pravidel, </span>
+    <span> které zaruèují, e mu poèítaè porozumí. (Syntatická správnost programu bohuel nezaruèuje vìcnou správnost programu, tedy nezaruèuje, e program bude dìlat to, co si pøejeme. </span>
+    <span> Zaruèuje pouze, e ho pøekladaè dokáe pøeloit.</span>
+    <br />
+    <span>___________</span>
+    <br />
+    <span> 4 Nehovoøíme o Visual Basicu. Poznamenejme, e ve skuteènosti mùe bıt kterıkoli jazyk pøekládán nebo interpretovanám (existuje napøíklad interpret jazyka C++), take by bylo pøesnìjší </span>
+    <span> hovoøit o jazycích <i> zpravidla </i> pøekládanıch a <i> zpravidla </i> interpretovanıch.</span>
+    <br />
+
+    <!-- 1.3.1 -->
+
+    <h3 id="_jazyk"> 1.3.1 Jazyk C++ </h3>
+    <span> U víme, e C++ patøí mezi pøekládané programovací jazyky. Jeho zdrojovı kód se mùe skládat z nìkolika souborù. Pøeklad takového programu probíhá ve tøech základních fázích: </span>
+    <ol>
+        <li>
+            <span> Nejprve preprocesor upraví zdrojové texty - odstraní z nich komentáøe (v následující kapitole se dozvíme, co to znamená) a provede nìkteré další úpravy. Vısledkem jsou zdrojové soubory </span>
+            <span> pøipravené k vlastnímu pøekladu.</span>
+        </li>
+        <li>
+            <span> Pak pøekladaè pøeloí samostatnì jednotlivé zdrojové soubory. Pøekladem z nich vzniknout tvz. relativní soubory (anglicky nazıvané <i> object file </i>). Relativní soubor se typicky jmenuje </span>
+            <span> stejnì jako zdrojovı soubor, má však pøíponu - pod Windows to je zpravidla .obj, v prostøedí Linux to je .o.</span>
+        </li>
+        <li>
+            <span> Nakonec sestavovací program (linker) spojí relativní soubory v jeden celek, pøipojí k potøebné knihovny (u hotové soušásti, které má pøekladaè k dispozici) a vytvoøí z nich spustitelnı soubor - </span>
+            <span> ten má pod Windows pøíponu .exe. V jinıch operaèních systémech nemusí mít ádnou zvláštní pøíponu.</span>
+        </li>
+    </ol>
+    <br />
+    <span> Preprocesor, pøekladaè a linker mohou bıt - a dnes zpravidla jsou - spojeny do jednoho programu, kterı provede postupnì všechny potøebné kroky. Pøepínaèi mezi zadanımi pøi </span>
+    <span> spuštìní tohoto programu lze ovšem zajistit, e probìhne napøíklad jen zpracování preprocesorem, jen zpracování preprocesorem a pøeklad nebo jen sestavení relativních souborù do </span>
+    <span> spustitelného programu. Podrobnìji se s tím seznámíme v pøíští kapitole.</span>
+    <br />
+    <img src="jak_se_preklada500.png" href="jak_se_preklada.png"/>
+    <br />
+    <span> <b> Obrázek - Prùbìh pøekladu v jazyce C++. </b> </span>
+    <br />
+
+    <!-- 1.3.2 -->
+
+    <h3 id="_assembly"> 1.3.2 Assebler </h3>
+    <span> Mezistupnìm mezi strojovım kódem a vyššími programovacími jazyky je <b> asembler </b> (assembler, <i> assembly language</i>).Je to jazyk sloenı pøedevším z mnemotechnickıch zkratek </span>
+    <span> jednotlivıch instrukcí strojového kódu. Napøíklad instrukce: </span>
+    <br />
+    <span>   MOV EAX, 0</span>
+    <br />
+    <span> znamená v jednom z asemblerù procesoru Intel pouívanıch na PC "ulo 0 do registru EAX"(Registry jsou souèástí procesoru, v nich se provádìjí operace s daty.) Asembler také zavádí promìnné </span>
+    <span> jako pojmenovaná místa v pamìti, a proto se pro nì døíve pouívalo oznaèení <b> jazyk symbolickıch adres. </b> Poznamenejme, e pro jeden procesor mùe existovat (a zpravidla existuje) více asemblerù.</span>
+    <br />
+    <span> Programování v asembleru je sice nesrovnatelnì jednodušší ne programování ve strojovém kódu, ale na druhé stranì je nesrovnatelnì obtínìjší ne programování ve vyšších programovacích jazycích.</span>
+    <br />
+    <span> Pøekladaèe C++ zpravidla umonují vytvoøit také pøeklad zdrojového kódu do asembleru.</span>
+    <br />
+
+    <!-- 1.4 -->
+
+    <h2 id="_system"> 1.4 Operaèní systém </h2>
+    <span> S poèítaèem se typicky dodává alespoò jeden program, a to operaèní systém. To je program, kterı startuje automaticky hned po spuštìní poèítaèe a bìí po dobu jeho bìhu. "Oivuje" poèítaè: pøíjmá </span>
+    <span> pokyny uivatele (nerozhoduje, zde jsou vyjádøeny slovem zapsanım v pøíkazové øádce nebo kliknutím na myší a ikonì), stará se o jejich provedení a informuje uivatele o vısledcích.</span>
+    <br />
+    <span> Vedle toho ovšem má ještì øadu dalších úloh, z nich pro nás nejdùleitìjší je, e poskytuje sluby bìícím programùm. Stará se o jejich spuštìní, o pøidìlování pamìti, poskytuje nástroje pro práci </span>
+    <span> se soubory atd. Chceme-li napøíklad v programu otevøít soubor, program prostì pøedá náš poadavek operaènímu systému a ten se postará o vše potøebné.</span>
+    <br />
+    <span> Mezi nejznámìjší operaèní systémy na osobních poèítaèích patøí rùzné verze Windows a Linuxu, na mobilních zaøízeních je to napøíklad Androi, iOS a další.</span>
+    <br />
+
+    <!-- 1.5 -->
+
+    <h2 id="_algoritmus"> 1.5 Program a algoritmus </h2>
+    <span> C++, podobnì jako ostatní programovací jazyky, slouí k zápisu programu. U víme, e program je nìjakı soubor instrukcí (pøíkazù), které poèítaèi øíkají, co má dìlat.</span>
+    <br />
+    <span> Program vdy pøedstavuje návod k provedení nìjaké úlohy nebo k vyøešení nìjakého problému. Pøitom musíme mít na pamìti, e poèítaè za nás problém nevyøeší, jen za nás udìlá </span>
+    <span> hrubou práci - prohledá obrovské mnoství záznamù v databázi, vypoèítá nìco podle sloitıch vzorcù, vykreslí obrázek a podobnì. <b> My mu ovšem musíme øíci, jak to má udìlat. </b> Jinımi slovy, musíme tento návod, </span>
+    <span> jak dospìt k poadovanému vısledku.</span>
+    <br />
+    <span> Tento návod musí mít urèité vlastnosti. Nìkteré z nich mohou vypadat samozøejmé, ale pøesto je zde uvedeme: </span>
+    <ol style="list-style-type: disc;">
+        <li>
+            <span> Návod musí vést k poadovanému vısledku.</span>
+        </li>
+        <li>
+            <span> Musí se zkládat z krokù, kterım poèítaè rozumí - tvz. elementárních krokù. (To pro nás znamená, e ho musíme umìt zapsat v nìkterém programovacím jazyce.)</span>
+        </li>
+        <li>
+            <span> Tìchto krokù nesmí bıt nekoneènì mnoho. (Nejde o to, e bychom mohli napsat program, kterı je nekoneènì velkı - to se nám asi nepodaøí. Není ale nic tìkého napsat krátkı program, kterı nikdy neskonèí, protoe se v nìm </span>
+            <span> bude donekoneèna opakovat urèitá skupina instrukcí.</span>
+        </li>
+        <li>
+            <span> Po kadém kroku musí poèítaè vìdìt, kterım krokem pokraèovat.</span>
+        </li>
+    </ol>
+    <span> Návod, kterı tyto podmínky splòuje, se obvykle oznaèuje jako <b> algoritmus. </b> Na program se mùeme dívat jako na zápis algoritmu v programovacím jazyce.</span>
+    <br />
+
+    <!-- 1.5.1 -->
+
+    <h3 id="_dolu"> 1.5.1 Metoda shora dolù </h3>
+    <span> Otázkou je, jak algoritmu dospìt. Je asi jasné, e nejprve musíme umìt danı problém vùbec vyøešit sami,<sup> 5 </sup> a pak se mùeme snait zapsat ho jako posloupnost </span>
+    <span> elementárních krokù. Pøitom se pouívá obvykle tvz. <b> metoda shora dolù. </b> Návod se rozkládá na menší a menší èásti, a dospìjeme k elementárním krokùm. Pøi tomto zjemòování se </span>
+    <span> samozøejmì mùe stát, e budeme muset pøedchozí rozdìlení upravit, nìkteré kroky spojit, nìkteré kroky pøidat ap.</span>
+    <hr />
+    <h4> Pøíklad 1.1: Øazení zadanıch hodnoty</h4>
+    <span> dodìlám ... </span>
+
+</body>
+
+</html>

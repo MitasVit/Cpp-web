@@ -1,0 +1,74 @@
+.macro {
+    color: green;
+    font-size: 20px;
+}
+
+.klic_slovo {
+    color: blue;
+    font-size: 20px;
+}
+.zavorka {
+    color: red;
+    font-size: 20px;
+}
+.strednik {
+    color: red;
+    font-size: 20px;
+}
+.std {
+    color: green;
+    font-size: 20px;
+}
+.normal {
+    color: black;
+    font-size: 20px;
+}
+.cislo {
+    color: purple;
+    font-size: 20px;
+}
+#jstext {
+    color: lightgreen;
+    font-size: 20px;
+}
+.komentáø{
+    color: lightgray;
+    font-size: 20px;
+}
+.p{
+    font-size: 20px;
+}
+.výpis{
+    color: gray;
+    font-size: 20px;
+}
+.test{
+    background-color: white;
+    border-bottom-width: 3px;
+    border-color: darkgray;
+}
+.lekce{
+    color: black;
+
+}
+.lekce{
+    cursor: pointer;
+    color: black;
+}
+.podlekce {
+    cursor: pointer;
+    color: black;
+}
+.podpodlekce {
+    cursor: pointer;
+    color: black;
+}
+.lekce :hover{
+    color: green;
+}
+.podlekce :hover {
+    color: green;
+}
+.podpodlekce :hover {
+    color: green;
+}

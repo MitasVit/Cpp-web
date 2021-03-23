@@ -267,7 +267,55 @@
     <span> samozøejmì mùže stát, že budeme muset pøedchozí rozdìlení upravit, nìkteré kroky spojit, nìkteré kroky pøidat ap.</span>
     <hr />
     <h4> Pøíklad 1.1: Øazení zadaných hodnoty</h4>
-    <span> dodìlám ... </span>
+    <div style="background-color: darkgray">
+        <span> Jako pøíklad metody shora dolù vezmeme úlohu: Máme skupinu N èíselných promìnných, které oznaèíme A[0], A[1],..., A[N-1]. Tato èísla chceme uspoøádat tak, aby platilo:</span>
+        <br />
+        <span> A[0] <= A[1] <= ... <= A[N-1]</span> 
+        <br />
+        <span> Nejprve zavedeme nové termíny, které nám usnadní vyjadøování.</span>
+        <br />
+        <span> Skupinì prommìných stejného typu , se kterými mùžeme zacházet jako s celkem, øíkáme v programování <b> pole </b>(v angliètinì se používá termín <i> array </i>). Zde tedy máme </span>
+        <span> pole A s prvky A[0], A[1], ..., A[N-1]. Èísla obsahující jednotlivé prvky se nazívají <b> indexy. </b></span>
+        <br />
+        <span> Úloha "zpøeházet" hodnoty uložené v prvcích tohoto pole, aby vyhovovaly podmínce (1), se nazývá <b> tøídìní pole.</b><sup> 6 </sup> Našim úkolem tedy je setøídit pole A. Návod pro setøídìní pole A mùže vypadat takto: </span>
+        <br />
+        <ol>
+            <li>
+                <span> Najdi v poli A prvek, který obsahuje nejmenší hodnotu, a vymìn ho s prvkem, který je na prvním místì (na místì s indexem 0).</span>
+            </li>
+            <li>
+                <span> Najdi v poli A prvek, který obsahuje druhou nejmenší hodnotu, a vymìò ho s prvkem, který je na druhém místì.</span>
+            </li>
+            <li>
+                <span> A takto postupuj dále, dokud není pole setøídìné.</span>
+            </li>
+        </ol>
+        <span> Ovšem program nemùže obsahovat nìjaké "takto postupuj dále" - musíme najít lepší formulaci. Pøitom si ale staèí uvìdomit, že v prvním kroku vyhledáváme nejmenší prvek z celého pole a dáme ho na první místo (do prvku pole s indexem 0). </span>
+        <span> Nejmenší hodnota je tedy už na svém místì a nemusíme se o ni starat. Proto nám ve druhém kroku staèí najít nejmenší prvek ze zbylho  úseku pole A[1], ..., A[N-1] a ten dát na druhé místo, ve tøetím kroku najít nejmenší hodnotu mezi prvky </span>
+        <span> A[2], ..., A[N-1] atd. V posledním kroku budeme hledat nejmenší z prvkù A[N-1], A[N-1]. Pak bude pole setøídìné, tedy bude vyhovovat podmínce (1). </span>
+        <br />
+        <span> To znamená, že opakujeme podobnou akci (vyhledat nejmenší prvek v úseku pole a dát ho na první místo v tomto úseku) se stále menším úsekem pole. Zkoumaný úsek pole zaèíná postupnì prvekem s indexem 0, 1, ..., N-1. Z tìchto úvah </span>
+        <span> mùže vzejít lepší formulace. Bude používat pomocnou promìnnou i, která nám poslouží jako "poèítadlo".</span>
+        <br />
+        <ol>
+            <li>
+                <span> Do promìnné i vlož hodnotu 0.</span>
+            </li>
+            <li>
+                <span> Mezi prvky A[i], ..., A[N-1] najdi nejmenší.</span>
+            </li>
+            <li>
+                <span> Vymìò ho s prvkem, který je na i-tém místì.</span>
+            </li>
+            <li>
+                <span> Zvìtši hodnotu promìnné i o 1.</span>
+            </li>
+            <li>
+                <span> Je-li i < N-1, pokraèuj krokem 2, jinak skonèi. </span>
+            </li>
+        </ol>
+
+    </div>
 
 </body>
 
